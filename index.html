@@ -15,23 +15,25 @@
     <div id="container">
       <div id="map"></div>
       <div id="sidebar">
+        <div id="api-key-form" style="margin-bottom: 1rem">
+          <h3 style="margin-top: 0">Google Maps API Key</h3>
+          <input
+            id="api-key-input"
+            type="password"
+            placeholder="Enter VITE_GOOGLE_MAPS_API_KEY"
+            style="width: 100%; box-sizing: border-box; padding: 0.5rem; margin-bottom: 0.5rem"
+          />
+          <button id="api-key-submit" style="padding: 0.5rem 0.75rem">Load Map</button>
+          <div id="api-key-error" style="color: #b00020; margin-top: 0.5rem; display: none"></div>
+          <div style="font-size: 0.85rem; color: #555; margin-top: 0.5rem">
+            The key is stored locally in your browser.
+          </div>
+        </div>
         <h3 style="flex-grow: 0">Request</h3>
         <pre style="flex-grow: 1" id="request"></pre>
         <h3 style="flex-grow: 0">Response</h3>
         <pre style="flex-grow: 1" id="response"></pre>
       </div>
     </div>
-
-    <!-- 
-      The `defer` attribute causes the script to execute after the full HTML
-      document has been parsed. For non-blocking uses, avoiding race conditions,
-      and consistent behavior across browsers, consider loading using Promises. See
-      https://developers.google.com/maps/documentation/javascript/load-maps-js-api
-      for more information.
-      -->
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
-      defer
-    ></script>
   </body>
 </html>
